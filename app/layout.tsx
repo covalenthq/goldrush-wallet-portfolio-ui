@@ -11,34 +11,34 @@ import { WalletProvider } from "@/lib/store";
 import { Toaster } from "@/components/ui/toaster";
 
 interface RootLayoutProps {
-  children: React.ReactNode
+    children: React.ReactNode
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
-  return (
-    <>
-      <html lang="en" suppressHydrationWarning>
-        <head />
-        <body
-          className={cn(
-            "min-h-screen bg-background font-sans antialiased",
-            fontSans.variable
-          )}
-        >
-          <Theme>
-            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-              <WalletProvider>
-                <div className="relative flex min-h-screen flex-col">
-                  <SiteHeader />
-                  <div className="flex-1">{children}</div>
-                  <Toaster />
-                </div>
-              </WalletProvider>
-            </ThemeProvider>
-          </Theme>
+    return (
+        <>
+            <html lang="en" suppressHydrationWarning>
+                <head />
+                <body
+                    className={cn(
+                        "min-h-screen bg-background font-sans antialiased",
+                        fontSans.variable
+                    )}
+                >
+                    <Theme>
+                        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+                            <WalletProvider>
+                                <div className="relative flex min-h-screen flex-col">
+                                    <SiteHeader />
+                                    <div className="flex-1">{children}</div>
+                                    <Toaster />
+                                </div>
+                            </WalletProvider>
+                        </ThemeProvider>
+                    </Theme>
 
-        </body>
-      </html>
-    </>
-  )
+                </body>
+            </html>
+        </>
+    )
 }

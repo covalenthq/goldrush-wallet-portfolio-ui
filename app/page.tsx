@@ -11,63 +11,63 @@ import { useRouter } from "next/navigation"
 import { useToast } from "@/components/ui/use-toast"
 
 export default function IndexPage() {
-  const {walletAddress,  setWalletAddress } = useContext(WalletContext);
-  const [address, setAddress] = useState(walletAddress ? walletAddress : "");
-  const [busy, setBusy] = useState(false)
-  const router = useRouter();
-  const { toast } = useToast()
+    const { walletAddress, setWalletAddress } = useContext(WalletContext);
+    const [address, setAddress] = useState(walletAddress ? walletAddress : "");
+    const [busy, setBusy] = useState(false)
+    const router = useRouter();
+    const { toast } = useToast()
 
 
-  const handleResolvedAddress = async() => {
-    setBusy(true)
-    const client = new CovalentClient(COVALENT_API_KEY ? COVALENT_API_KEY : "");
+    const handleResolvedAddress = async () => {
+        setBusy(true)
+        const client = new CovalentClient(COVALENT_API_KEY ? COVALENT_API_KEY : "");
         try {
-          const walletActivityResp =
-          await client.BaseService.getAddressActivity(
-              address.trim()
-          );
-          if(walletActivityResp.error){
-            toast({
-              variant: "destructive",
-              title: "Something went wrong.",
-              description: walletActivityResp.error_message
-            })
-          }
-          setWalletAddress(walletActivityResp.data.address);
-          router.push("/activity")
+            const walletActivityResp =
+                await client.BaseService.getAddressActivity(
+                    address.trim()
+                );
+            if (walletActivityResp.error) {
+                toast({
+                    variant: "destructive",
+                    title: "Something went wrong.",
+                    description: walletActivityResp.error_message
+                })
+            }
+            setWalletAddress(walletActivityResp.data.address);
+            router.push("/activity")
 
 
-      } catch (exception) {
-          console.log(exception)
-      }
-    setBusy(false)
-  }
+        } catch (exception) {
+            console.log(exception)
+        }
+        setBusy(false)
+    }
 
-  return (
-    <section className="container flex flex-col justify-center gap-6 md:py-10 h-[calc(100vh-150px)] items-center ">
-      <Flex direction="column" gap="4">
-        <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
-          GoldRush Wallet UI
-        </h1>
-        <p className="max-w-[700px] text-lg text-muted-foreground">
-          Accessible and customizable components that you can copy and paste
-          into your apps. Free. Open Source. And Next.js 13 Ready.
-        </p>
-        <Flex direction="column" gap="2">
-          <Label htmlFor="email">Wallet Address</Label>
-          <Input type="input" id="address" placeholder="Wallet Address" value={address} onChange={(e)=>{
-            setAddress(e.target.value)
-          }}/>
-        </Flex>
-        <div>
-        <Button disabled={address.length === 0 || busy} onClick={async ()=>{
-            await handleResolvedAddress()
-          }}>
-            Continue
-          </Button>
-        </div>
+    return (
+        <section className="container flex flex-col justify-center gap-6 md:py-10 h-[calc(100vh-150px)] items-center ">
+            <Flex direction="column" gap="4">
+                <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
+                    GoldRush Wallet &amp; Portfolio UI
+                </h1>
+                <p className="max-w-[700px] text-lg text-muted-foreground">
+                    Accessible and customizable components that you can copy and paste
+                    into your apps. Free. Open Source. And Next.js 13 Ready.
+                </p>
+                <Flex direction="column" gap="2">
+                    <Label htmlFor="email">Wallet Address</Label>
+                    <Input type="input" id="address" placeholder="Wallet Address" value={address} onChange={(e) => {
+                        setAddress(e.target.value)
+                    }} />
+                </Flex>
+                <div>
+                    <Button disabled={address.length === 0 || busy} onClick={async () => {
+                        await handleResolvedAddress()
+                    }}>
+                        Continue
+                    </Button>
+                </div>
 
-      </Flex>
-    </section>
-  )
+            </Flex>
+        </section>
+    )
 }
