@@ -35,7 +35,7 @@ export default function IndexPage() {
                 })
             }
             setWalletAddress(walletActivityResp.data.address);
-            router.push("/activity")
+            router.push(`/activity/${walletActivityResp.data.address}`)
 
 
         } catch (exception) {

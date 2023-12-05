@@ -8,9 +8,9 @@ import { SetStateAction, useContext, useEffect, useState } from "react";
 import { Flex } from "@radix-ui/themes";
 import { Button } from "@/components/ui/button";
 
-export default function Balance() {
-    const {walletAddress, chains} = useContext(WalletContext);
-    const [chain_names, setChainNames] = useState([]);
+export default function Balance({ params }: { params: { slug: string } }) {
+    const {setWalletAddress, chains} = useContext(WalletContext);
+    const [chain_names, setChainNames] = useState(["eth-mainnet"]);
     const [contractAddress, setContractAddress] = useState("")
 
     useEffect(()=>{
@@ -19,13 +19,17 @@ export default function Balance() {
       }
     },[chains])
 
-    if(!walletAddress || chains.length === 0 || chain_names.length === 0) return
+    useEffect(()=>{
+      if(params.slug){
+        setWalletAddress(params.slug)
+      }
+    },[params.slug])
 
     return !contractAddress
         ?
         <TokenBalancesListView
           chain_names={chain_names}
-          address={walletAddress}
+          address={params.slug}
           onTransferClick={(e: SetStateAction<string>)=>{
             setContractAddress(e)
           }}
@@ -34,7 +38,7 @@ export default function Balance() {
         <Flex direction="column" gap="2">
           <TokenTransfersListView
             chain_name="eth-mainnet"
-            address={walletAddress}
+            address={params.slug}
             contract_address={contractAddress}
           />
           <div>

@@ -15,31 +15,27 @@ interface DashboardLayoutProps {
 }
 
 export default function DashboardLayout({ children }: DashboardLayoutProps) {
-  const {walletAddress, setChains, chains, tableState, setTableState} = useContext(WalletContext);
+  const {walletAddress} = useContext(WalletContext);
   const router = useRouter();
-  const pathname = usePathname()
+  const pathname = usePathname();
+  const pathRegex = pathname.match(/(\/[^\/]+\/[^\/]+\/)/);
+  const path = pathRegex ? pathRegex[1] : pathname;
 
   const handleTabSwitch = (route: string) => {
-    router.push(`/dashboard/${route}`)
+    router.push(`/dashboard/${route}/${walletAddress}`)
   }
-
-  useEffect(()=>{
-    if(!walletAddress){
-      router.push("/")
-    }
-  },[walletAddress])
 
   return (
     <Flex  direction="column" gap="4" className="container h-[calc(100vh-150px)] py-8" >
-      <Tabs value={pathname} className="w-full">
+      <Tabs value={path} className="w-full">
         <TabsList className="grid w-full grid-cols-3">
-          <TabsTrigger value="/dashboard/balance" onClick={()=>{
+          <TabsTrigger value="/dashboard/balance/" onClick={()=>{
               handleTabSwitch("balance")
           }}>Token balances</TabsTrigger>
-          <TabsTrigger value="/dashboard/nft" onClick={()=>{
+          <TabsTrigger value="/dashboard/nft/" onClick={()=>{
               handleTabSwitch("nft")
           }}>NFTs</TabsTrigger>
-          <TabsTrigger value="/dashboard/settings" onClick={()=>{
+          <TabsTrigger value="/dashboard/settings/" onClick={()=>{
               handleTabSwitch("settings")
           }}>Settings</TabsTrigger>
         </TabsList>
