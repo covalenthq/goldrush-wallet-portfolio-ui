@@ -3,10 +3,17 @@ import { WalletContext } from "@/lib/store";
 import {
   NFTWalletTokenListView,
 } from "@covalenthq/goldrush-kit";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 
 export default function NFT({ params }: { params: { slug: string } }) {
-    const {setWalletAddress} = useContext(WalletContext);
+    const {setWalletAddress, chains} = useContext(WalletContext);
+    const [chain_names, setChainNames] = useState(["eth-mainnet"]);
+
+    useEffect(()=>{
+      if(chains.length > 0){
+        setChainNames(chains.map((o: { name: any; }) => o.name))
+      }
+    },[chains])
 
     useEffect(()=>{
       if(params.slug){
@@ -16,6 +23,6 @@ export default function NFT({ params }: { params: { slug: string } }) {
 
     return <NFTWalletTokenListView
     address={params.slug}
-    chain_name="eth-mainnet"
+    chain_names={chain_names}
   />
 }

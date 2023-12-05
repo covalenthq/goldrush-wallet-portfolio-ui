@@ -14,6 +14,7 @@ export default function Balance({ params }: { params: { slug: string } }) {
     const [contractAddress, setContractAddress] = useState("")
 
     useEffect(()=>{
+      console.log(chains)
       if(chains.length > 0){
         setChainNames(chains.map((o: { name: any; }) => o.name))
       }
