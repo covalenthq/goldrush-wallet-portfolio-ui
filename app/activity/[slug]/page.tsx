@@ -9,15 +9,15 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useContext, useEffect } from "react";
 
-export default function Activity() {
+export default function Activity({ params }: { params: { slug: string } }) {
   const {walletAddress, setChains, chains, setTableState} = useContext(WalletContext);
   const router = useRouter();
 
   useEffect(()=>{
-    if(!walletAddress){
+    if(!params.slug){
       router.push("/")
     }
-  },[walletAddress])
+  },[params.slug])
   
   return (
     <Flex direction="column" gap="4" className="w-full">
@@ -28,7 +28,7 @@ export default function Activity() {
           Please select chains to view your wallet.
       </p>
       <AddressActivityListView 
-        address={walletAddress}
+        address={params.slug}
         getAllRowSelection={(e: any)=>{
           setChains(e)
         }}
@@ -40,7 +40,7 @@ export default function Activity() {
         <Link href="/">
           <Button disabled={chains.length === 0}>Back</Button>
         </Link>
-        <Link href="/dashboard/balance">
+        <Link href={`/dashboard/balance/${params.slug}`}>
           <Button disabled={chains.length === 0} >Continue</Button>
         </Link>
       </Flex>
