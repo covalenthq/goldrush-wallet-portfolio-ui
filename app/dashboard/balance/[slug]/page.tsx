@@ -27,7 +27,7 @@ export default function Balance({ params }: { params: { slug: string } }) {
     return <TokenBalancesListView
       chain_names={chain_names}
       address={params.slug}
-      onTransferClick={(e: SetStateAction<string>)=>{
+      on_transfer_click={(e: SetStateAction<string>)=>{
         router.push(`${pathname}/transfers/${e}`)
       }}
     />
