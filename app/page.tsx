@@ -13,13 +13,14 @@ import { useToast } from "@/components/ui/use-toast"
 export default function IndexPage() {
     const { walletAddress, setWalletAddress } = useContext(WalletContext);
     const [address, setAddress] = useState(walletAddress ? walletAddress : "");
-    const [busy, setBusy] = useState(false)
+    const [busy, setBusy] = useState(false);
     const router = useRouter();
-    const { toast } = useToast()
+    const { toast } = useToast();
 
+    const handleResolvedAddress = async (e: any) => {
+        e.preventDefault();
+        setBusy(true);
 
-    const handleResolvedAddress = async () => {
-        setBusy(true)
         const client = new CovalentClient(COVALENT_API_KEY ? COVALENT_API_KEY : "");
         try {
             const walletActivityResp =
@@ -40,8 +41,9 @@ export default function IndexPage() {
         } catch (exception) {
             console.log(exception)
         }
-        setBusy(false)
+        setBusy(false);
     }
+
 
     return (
         <section className="container flex flex-col justify-center gap-6 md:py-10 h-[calc(100vh-150px)] items-center ">
@@ -53,19 +55,20 @@ export default function IndexPage() {
                     Accessible and customizable components that you can copy and paste
                     into your apps. Free. Open Source. And Next.js 13 Ready.
                 </p>
-                <Flex direction="column" gap="2">
-                    <Label htmlFor="email">Wallet Address</Label>
-                    <Input type="input" id="address" placeholder="Wallet Address" value={address} onChange={(e) => {
-                        setAddress(e.target.value)
-                    }} />
-                </Flex>
-                <div>
-                    <Button disabled={address.length === 0 || busy} onClick={async () => {
-                        await handleResolvedAddress()
-                    }}>
-                        Continue
-                    </Button>
-                </div>
+                <form onSubmit={handleResolvedAddress}>
+                    <Flex direction="column" gap="2">
+                        <Label htmlFor="email">Wallet Address</Label>
+                        <Input type="input" id="address" placeholder="Wallet Address" value={address} onChange={(e) => {
+                            setAddress(e.target.value)
+                        }} />
+                        <div>
+                            <Button disabled={address.length === 0 || busy} type="submit">
+                                Continue
+                            </Button>
+                        </div>
+                    </Flex>
+                </form>
+
 
             </Flex>
         </section>

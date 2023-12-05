@@ -18,7 +18,6 @@ export default function Settings({ params }: { params: { slug: string } }) {
         row_selection_state={tableState} 
         address={params.slug} 
         get_all_row_selection={(e: any)=>{
-          console.log(e)
             setChains(e)
         }}
         get_row_selection_state={(e: any)=>{
