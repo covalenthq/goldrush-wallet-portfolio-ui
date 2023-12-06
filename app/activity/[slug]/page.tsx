@@ -27,7 +27,7 @@ export default function Activity({ params }: { params: { slug: string } }) {
         <p className="max-w-[700px] text-lg text-muted-foreground">
           Please select chains to view your wallet.
       </p>
-      <AddressActivityListView 
+      <AddressActivityListView
         address={params.slug}
         get_all_row_selection={(e: any)=>{
           setChains(e)

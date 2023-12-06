@@ -11,6 +11,10 @@ interface WalletContextType {
     setChains: Function
     tableState: { [key: string]: boolean }
     setTableState: Function
+    color: string
+    setColor: Function
+    setBorderRadius: Function
+    borderRadius: string
 }
 
 
@@ -28,11 +32,14 @@ export const WalletProvider: React.FC<WalletProviderProps>= ({children}) => {
     const [walletAddress, setWalletAddress] = useState<string>("");
     const [chains, setChains] = useState<[]>([]);
     const [tableState, setTableState] = useState({});
+    const [color, setColor] = useState<any>("slate");
+    const [borderRadius, setBorderRadius] = useState<any>("medium");
+
     const mode: any = theme;
 
     return (
-        <GoldRushProvider apikey={COVALENT_API_KEY ? COVALENT_API_KEY : ""} mode={mode}>
-            <WalletContext.Provider value={{ walletAddress, setWalletAddress, chains, setChains, tableState, setTableState}}>
+        <GoldRushProvider apikey={COVALENT_API_KEY ? COVALENT_API_KEY : ""} mode={mode} color={color} border_radius={borderRadius}>
+            <WalletContext.Provider value={{ walletAddress, setWalletAddress, chains, setChains, tableState, setTableState, setColor, color, setBorderRadius, borderRadius}}>
                 {children}
             </WalletContext.Provider>
         </GoldRushProvider>
