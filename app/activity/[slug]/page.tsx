@@ -29,10 +29,10 @@ export default function Activity({ params }: { params: { slug: string } }) {
       </p>
       <AddressActivityListView 
         address={params.slug}
-        getAllRowSelection={(e: any)=>{
+        get_all_row_selection={(e: any)=>{
           setChains(e)
         }}
-        getRowSelectionState={(e: any)=>{
+        get_row_selection_state={(e: any)=>{
           setTableState(e)
         }}
       />
