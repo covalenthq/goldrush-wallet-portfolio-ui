@@ -32,3 +32,10 @@ export const COLORS = {
   "rose": "#f43f5e"
 }
 
+export const BORDER_RADIUS = {
+  "none": "0.0rem",
+  "small": "0.25rem",
+  "medium": "0.5rem",
+  "large": "0.75rem",
+  "full": "1rem"
+};
