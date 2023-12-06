@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@covalenthq/client-sdk": "^0.6.3",
-    "@covalenthq/goldrush-kit": "^0.1.9",
+    "@covalenthq/goldrush-kit": "^0.2.2",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-tabs": "^1.0.4",
