@@ -30,7 +30,7 @@ export const WalletProvider: React.FC<WalletProviderProps>= ({children}) => {
     const [walletAddress, setWalletAddress] = useState<string>("");
     const [chains, setChains] = useState<[]>([]);
     const [tableState, setTableState] = useState({});
-    const [color, setColor] = useState<any>("sky");
+    const [color, setColor] = useState<any>("slate");
     const mode: any = theme;
 
     return (
