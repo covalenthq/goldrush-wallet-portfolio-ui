@@ -11,6 +11,8 @@ interface WalletContextType {
     setChains: Function
     tableState: { [key: string]: boolean }
     setTableState: Function
+    color: string
+    setColor: Function
 }
 
 
@@ -28,11 +30,12 @@ export const WalletProvider: React.FC<WalletProviderProps>= ({children}) => {
     const [walletAddress, setWalletAddress] = useState<string>("");
     const [chains, setChains] = useState<[]>([]);
     const [tableState, setTableState] = useState({});
+    const [color, setColor] = useState<any>("sky");
     const mode: any = theme;
 
     return (
-        <GoldRushProvider apikey={COVALENT_API_KEY ? COVALENT_API_KEY : ""} mode={mode}>
-            <WalletContext.Provider value={{ walletAddress, setWalletAddress, chains, setChains, tableState, setTableState}}>
+        <GoldRushProvider apikey={COVALENT_API_KEY ? COVALENT_API_KEY : ""} mode={mode} color={color}>
+            <WalletContext.Provider value={{ walletAddress, setWalletAddress, chains, setChains, tableState, setTableState, setColor, color}}>
                 {children}
             </WalletContext.Provider>
         </GoldRushProvider>

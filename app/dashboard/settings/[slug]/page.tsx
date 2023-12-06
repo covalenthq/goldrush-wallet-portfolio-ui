@@ -15,13 +15,13 @@ export default function Settings({ params }: { params: { slug: string } }) {
       },[params.slug])
 
     return  <AddressActivityListView 
-        row_selection_state={tableState} 
-        address={params.slug} 
-        get_all_row_selection={(e: any)=>{
-            setChains(e)
-        }}
-        get_row_selection_state={(e: any)=>{
-            setTableState(e)
-    }}
-/>
+      row_selection_state={tableState} 
+      address={params.slug} 
+      get_all_row_selection={(e: any)=>{
+          setChains(e)
+      }}
+      get_row_selection_state={(e: any)=>{
+          setTableState(e)
+      }}
+    />
 }
