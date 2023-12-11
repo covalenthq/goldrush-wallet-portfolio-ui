@@ -18,7 +18,7 @@ export default function Balance({ params }: { params: { slug: string } }) {
     },[params.slug])
 
     return <TokenBalancesListView
-      chain_names={chains.map((o: { name: any; }) => o.name)}
+      chain_names={chains.length > 0 ? chains.map((o: { name: any; }) => o.name) : ["eth-mainnet"]}
       address={params.slug}
       on_transfer_click={(e: SetStateAction<string>)=>{
         router.push(`${pathname}/transfers/${e}`)

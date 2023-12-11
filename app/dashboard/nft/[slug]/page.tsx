@@ -16,6 +16,6 @@ export default function NFT({ params }: { params: { slug: string } }) {
 
     return <NFTWalletTokenListView
     address={params.slug}
-    chain_names={chains.map((o: { name: any; }) => o.name)}
+    chain_names={chains.length > 0 ? chains.map((o: { name: any; }) => o.name) : ["eth-mainnet"]}
   />
 }
