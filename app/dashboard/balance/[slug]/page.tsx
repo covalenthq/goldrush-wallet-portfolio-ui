@@ -8,15 +8,8 @@ import { usePathname, useRouter } from "next/navigation";
 
 export default function Balance({ params }: { params: { slug: string } }) {
     const {setWalletAddress, chains} = useContext(WalletContext);
-    const [chain_names, setChainNames] = useState(["eth-mainnet"]);
     const pathname = usePathname();
     const router = useRouter();
-
-    useEffect(()=>{
-      if(chains.length > 0){
-        setChainNames(chains.map((o: { name: any; }) => o.name))
-      }
-    },[chains])
 
     useEffect(()=>{
       if(params.slug){
@@ -25,7 +18,7 @@ export default function Balance({ params }: { params: { slug: string } }) {
     },[params.slug])
 
     return <TokenBalancesListView
-      chain_names={chain_names}
+      chain_names={chains.length > 0 ? chains.map((o: { name: any; }) => o.name) : ["eth-mainnet"]}
       address={params.slug}
       on_transfer_click={(e: SetStateAction<string>)=>{
         router.push(`${pathname}/transfers/${e}`)

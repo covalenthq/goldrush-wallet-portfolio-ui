@@ -7,14 +7,7 @@ import { useContext, useEffect, useState } from "react";
 
 export default function NFT({ params }: { params: { slug: string } }) {
   const {setWalletAddress, chains} = useContext(WalletContext);
-  const [chain_names, setChainNames] = useState(["eth-mainnet"]);
-
-  useEffect(()=>{
-    if(chains.length > 0){
-      setChainNames(chains.map((o: { name: any; }) => o.name))
-    }
-  },[chains])
-
+  
     useEffect(()=>{
       if(params.slug){
         setWalletAddress(params.slug)
@@ -23,6 +16,6 @@ export default function NFT({ params }: { params: { slug: string } }) {
 
     return <NFTWalletTokenListView
     address={params.slug}
-    chain_names={chain_names}
+    chain_names={chains.length > 0 ? chains.map((o: { name: any; }) => o.name) : ["eth-mainnet"]}
   />
 }
