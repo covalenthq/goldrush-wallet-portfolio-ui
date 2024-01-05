@@ -36,7 +36,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 <div className="relative flex min-h-screen flex-col">
                   <SiteHeader />
                   <div className="flex-1">{children}</div>
-                  <footer className="border-t">
+                  <footer className="bg-background fixed bottom-0 z-40 w-full border-t">
                     <a
                       href="https://www.covalenthq.com/"
                       className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0 "
