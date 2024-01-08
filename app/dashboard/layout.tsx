@@ -26,7 +26,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
     <Flex
       direction="column"
       gap="4"
-      className="container min-h-screen pt-8 pb-[5rem]"
+      className="container min-h-[calc(100vh-150px)] py-8"
     >
       <Tabs value={path} className="w-full">
         <TabsList className="grid w-full grid-cols-3">
