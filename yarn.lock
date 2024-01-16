@@ -206,7 +206,7 @@
     "@babel/helper-validator-identifier" "^7.22.20"
     to-fast-properties "^2.0.0"
 
-"@covalenthq/client-sdk@^0.6.3", "@covalenthq/client-sdk@^0.6.6":
+"@covalenthq/client-sdk@^0.6.3":
   version "0.6.7"
   resolved "https://registry.yarnpkg.com/@covalenthq/client-sdk/-/client-sdk-0.6.7.tgz#28604a99c40e2f4b4895a7d8babe9f7813fc23a2"
   integrity sha512-Q/wwiUGRqOXIZ6JHiEeEK8qHCh4cKc9RAqqU9m6SMb6mH326NJ3trIs+jzopTPsCkNM7atmE1QD1YcvhYuDa4A==
@@ -220,12 +220,26 @@
     rollup-plugin-typescript2 "^0.35.0"
     typescript "^5.1.6"
 
-"@covalenthq/goldrush-kit@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@covalenthq/goldrush-kit/-/goldrush-kit-0.2.2.tgz#b8d29e4868eef2f85c52cd8b06a09ae942246484"
-  integrity sha512-8ovVwWXIt7RCqezDoPxMayrekPplsaJiZK46ccHfEtMQ2yu3mUdM+wbOCYPiJLIERF7POY/pfTxTvgSy2dyxPg==
+"@covalenthq/client-sdk@^0.7.4":
+  version "0.7.5"
+  resolved "https://registry.yarnpkg.com/@covalenthq/client-sdk/-/client-sdk-0.7.5.tgz#71cf928ef7ea10895ca10a87b0736cf1672a1dd6"
+  integrity sha512-5VF4ylHLj3GdLy3vUjv2OIa8w+im7uN7RKzKR9DrFK04A9Um0zN0sKAc44WC/Jgh6JZ9mF2uTQOw1HnWkm1jmw==
   dependencies:
-    "@covalenthq/client-sdk" "^0.6.6"
+    "@rollup/plugin-commonjs" "^25.0.4"
+    "@rollup/plugin-node-resolve" "^15.2.1"
+    big.js "^6.2.1"
+    chalk "^4.1.2"
+    date-fns "^2.30.0"
+    rollup "^3.29.1"
+    rollup-plugin-typescript2 "^0.35.0"
+    typescript "^5.1.6"
+
+"@covalenthq/goldrush-kit@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@covalenthq/goldrush-kit/-/goldrush-kit-0.3.2.tgz#df648d1600ff5ffa420136174bf45aeca331628b"
+  integrity sha512-Aq8DiVKccWP84ImUHe6qdQrwMmmY+3ipGYBqqES+HpE2DW+j1SZ1Hi+tUHRq30gP4zEitlEt1TVJAPfrKN895A==
+  dependencies:
+    "@covalenthq/client-sdk" "^0.7.4"
     "@headlessui/react" "^1.7.17"
     "@radix-ui/react-avatar" "^1.0.4"
     "@radix-ui/react-checkbox" "^1.0.4"

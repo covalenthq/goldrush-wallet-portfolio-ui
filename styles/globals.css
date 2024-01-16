@@ -25,7 +25,7 @@
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --accent: 210 40% 96.1%;
+    --accent: 215 16% 47%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 100% 50%;
@@ -79,4 +79,3 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
-
