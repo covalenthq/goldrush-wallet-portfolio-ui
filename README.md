@@ -1,11 +1,6 @@
-<div align="center">
   <a href="https://www.covalenthq.com/products/goldrush/" target="_blank">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/covalenthq/goldrush-wallet-portfolio-ui/main/static/grk-wallet-banner.png">
-    <img alt="GoldRush Portfolio & Wallet UI template" src="https://raw.githubusercontent.com/covalenthq/goldrush-wallet-portfolio-ui/main/static/grk-wallet-banner.png" width="680"/>
-  </picture>
+    <img alt="GoldRush Portfolio & Wallet UI template" src="https://raw.githubusercontent.com/covalenthq/goldrush-wallet-portfolio-ui/main/static/grk-wallet-banner.png" style="max-width: 100%;"/>
   </a>
-</div>
 
 <br/>
 
@@ -14,6 +9,14 @@
 <div align="center">
 Powered by GoldRush Kit. Open-source. Customizable. 200+ Chains.
 </div>
+
+## Ready-to-use customizable template
+
+<a href="https://goldrush-wallet-portfolio-ui.vercel.app/">View live template</a>
+
+<img alt="GoldRush Portfolio & Wallet UI template" src="https://raw.githubusercontent.com/covalenthq/goldrush-wallet-portfolio-ui/main/static/grk-wallet-template.png" style="max-width: 100%;"/>
+
+
 
 ## One-click deploy
 
