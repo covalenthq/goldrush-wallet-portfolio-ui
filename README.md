@@ -1,8 +1,18 @@
+<div align="center">
   <a href="https://www.covalenthq.com/products/goldrush/" target="_blank">
-    <img alt="GoldRush Portfolio & Wallet UI template" src="https://raw.githubusercontent.com/covalenthq/goldrush-wallet-portfolio-ui/main/static/grk-wallet-banner.png" style="max-width: 100%;"/>
+      <img alt="GoldRush Portfolio & Wallet UI template" src="https://raw.githubusercontent.com/covalenthq/goldrush-wallet-portfolio-ui/main/static/grk-wallet-banner.png" style="max-width: 100%;"/>
   </a>
-
-<br/>
+  
+  <br/>
+  
+  [![GitHub license](https://img.shields.io/github/license/covalenthq/goldrush-wallet-portfolio-ui)](https://github.com/covalenthq/goldrush-wallet-portfolio-ui/blob/main/LICENSE)
+  [![GitHub last commit](https://img.shields.io/github/last-commit/covalenthq/goldrush-wallet-portfolio-ui)](https://github.com/covalenthq/goldrush-wallet-portfolio-ui/commits/master)
+  [![GitHub contributors](https://img.shields.io/github/contributors/covalenthq/goldrush-wallet-portfolio-ui)](https://github.com/covalenthq/goldrush-wallet-portfolio-ui/graphs/contributors)
+  [![GitHub issues](https://img.shields.io/github/issues/covalenthq/goldrush-wallet-portfolio-ui)](https://github.com/covalenthq/goldrush-wallet-portfolio-ui/issues)
+  [![GitHub pull requests](https://img.shields.io/github/issues-pr/covalenthq/goldrush-wallet-portfolio-ui)](https://github.com/covalenthq/goldrush-wallet-portfolio-ui/pulls)
+  [![GitHub stars](https://img.shields.io/github/stars/covalenthq/goldrush-wallet-portfolio-ui)](https://github.com/covalenthq/goldrush-wallet-portfolio-ui/stargazers)
+  [![GitHub forks](https://img.shields.io/github/forks/covalenthq/goldrush-wallet-portfolio-ui)](https://github.com/covalenthq/goldrush-wallet-portfolio-ui/network/members)
+</div>
 
 <h1 align="center">Beautifully designed Wallet and Portfolio application template.</h1>
 
