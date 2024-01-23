@@ -11,9 +11,9 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 import "@radix-ui/themes/styles.css"
 import { WalletProvider } from "@/lib/store"
-import { poweredCovalent } from "@/lib/svg"
 import { Toaster } from "@/components/ui/toaster"
 import { KeyDialog } from "@/components/key-dialog"
+import { Footer } from '@/components/footer';
 
 interface RootLayoutProps {
   children: React.ReactNode
@@ -37,14 +37,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                   <SiteHeader />
                   <div className="flex-1">{children}</div>
                   <Analytics />
-                  <footer className="bg-background sticky bottom-0 z-40 w-full border-t">
-                    <a
-                      href="https://www.covalenthq.com/"
-                      className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0 "
-                    >
-                      {poweredCovalent}
-                    </a>
-                  </footer>
+                  <Footer/>
                   <KeyDialog />
                   <Toaster />
                 </div>
