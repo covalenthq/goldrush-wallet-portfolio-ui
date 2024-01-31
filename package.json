@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@covalenthq/client-sdk": "^0.6.3",
-    "@covalenthq/goldrush-kit": "^0.3.2",
+    "@covalenthq/goldrush-kit": "^0.3.6",
     "@radix-ui/react-alert-dialog": "^1.0.5",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
