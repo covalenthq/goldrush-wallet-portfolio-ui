@@ -37,12 +37,12 @@ export default function Activity({ params }: { params: { slug: string } }) {
         }}
       />
       <Flex gap="2">
-        <Link href="/">
-          <Button disabled={chains.length === 0}>Back</Button>
-        </Link>
-        <Link href={`/dashboard/balance/${params.slug}`}>
-          <Button disabled={chains.length === 0} >Continue</Button>
-        </Link>
+        <Button disabled={chains.length === 0} onClick={()=>{
+          router.back()
+        }}>Back</Button>
+        <Button disabled={chains.length === 0} onClick={()=>{
+          router.push(`/dashboard/balance/${params.slug}`)
+        }}>Continue</Button>
       </Flex>
     </Flex>
   )
