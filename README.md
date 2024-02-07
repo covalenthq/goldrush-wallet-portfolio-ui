@@ -24,8 +24,7 @@ Powered by GoldRush Kit. Open-source. Customizable. 200+ Chains.
 
 <a href="https://goldrush-wallet-portfolio-ui.vercel.app/">View live template</a>
 
-<img alt="GoldRush Portfolio & Wallet UI template" src="https://raw.githubusercontent.com/covalenthq/goldrush-wallet-portfolio-ui/main/static/grk-wallet-template.png" style="max-width: 100%;"/>
-
+https://github.com/covalenthq/goldrush-wallet-portfolio-ui/assets/471422/c5a7e2cf-3050-41ca-a7f7-1397b5eb3ffe
 
 
 ## One-click deploy
