@@ -8,7 +8,7 @@ import { Flex } from "@radix-ui/themes";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 
-export default function Transfers({ params }: { params: { contract_address: string, slug: string } }) {
+export default function Transfers({ params }: { params: { contract_address: string, slug: string, chain: string } }) {
     const {setWalletAddress} = useContext(WalletContext);
     const router = useRouter();
 
@@ -20,7 +20,7 @@ export default function Transfers({ params }: { params: { contract_address: stri
 
     return <Flex direction="column" gap="2">
     <TokenTransfersListView
-      chain_name="eth-mainnet"
+      chain_name={params.chain}
       address={params.slug}
       contract_address={params.contract_address}
     />
