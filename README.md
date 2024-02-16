@@ -51,13 +51,13 @@ Visit GoldRush's [component documentation](https://www.covalenthq.com/docs/unifi
 
 ## Features
 
-- Next.js 13 App Directory
-- Radix UI Primitives
-- Tailwind CSS
-- Icons from [Lucide](https://lucide.dev)
-- Dark mode with `next-themes`
-- Tailwind CSS class sorting, merging and linting.
-
+- Ready-to-use customizable template: Jumpstart your dApp journey with a beautifully designed UI that’s both intuitive and engaging.
+- Tailwind CSS class sorting, merging, and linting: Keep your code clean and maintainable with our built-in tools, ensuring your project remains scalable and efficient.
+- ENS, RNS, Lens, Unstoppable Domain Support: Seamlessly integrate with major domain services for decentralized naming across your applications, enhancing user accessibility and ownership.
+- Cross-Chain Wallet Activity: Monitor and manage wallet activities across different blockchains, providing users with a unified view of their transactions.
+- Cross-Chain Token Balances: Access real-time information on token balances over multiple chains, simplifying asset management for users.
+- Cross-Chain NFT Holdings: Showcase NFT holdings with images, estimated values, and more across different blockchains, offering a comprehensive portfolio view.
+- Token Transfer History: Track and display the history of token transfers, giving users insight into their transaction patterns and asset flow.
 
 ## 🤝 Contributing
 
